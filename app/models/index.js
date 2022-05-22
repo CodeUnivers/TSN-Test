@@ -6,4 +6,5 @@ db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.database = dbConfig.database;
 db.products = require("./product.model.js")(mongoose);
+db.carts = require("./cart.model.js")(mongoose);
 module.exports = db;

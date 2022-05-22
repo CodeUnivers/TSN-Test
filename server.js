@@ -32,9 +32,11 @@ app.post("/test", upload.single("file"), (req, res) => {
     console.log(req.body);
 });
 
-const route = require("./app/routes/product.routes");
+const routeProducts = require("./app/routes/product.routes");
+app.use('/api/products', routeProducts);
 
-app.use('/api/products', route);
+const routeCarts = require("./app/routes/cart.routes");
+app.use('/api/carts', routeCarts);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
