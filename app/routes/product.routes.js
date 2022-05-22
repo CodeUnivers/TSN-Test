@@ -5,7 +5,6 @@ const upload = require("../middleware/upload");
 
 router.post("/", upload.single('file'), products.create);
 router.get("/", products.findAll);
-router.get("/files", products.getListFiles);
 router.get("/:id", products.findOne);
 router.put("/:id", products.update);
 router.delete("/:id", products.delete);
